@@ -137,6 +137,7 @@ h1::after {
   height: 100%;
   background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
   z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
+  align-items: center;
 }
 
 
@@ -152,9 +153,18 @@ h1::after {
 }
 
 .card-title {
+  position: relative;
   font-size: 24px;
   margin: 10px 0;
   color: #ffffff;
+  
+}
+.card-title-pre {
+  position: relative;
+  font-size: 24px;
+  margin: 10px 0;
+  color: #ffffff;
+  left: 75px;
   
 }
 
@@ -178,7 +188,7 @@ h1::after {
 .card-price {
   font-size: 18px;
   font-weight: bold;
-  color: #e60000;
+  color: #ff0000;
   margin-top: 10px;
   left: 90px;
   position: relative;
