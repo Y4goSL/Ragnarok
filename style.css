@@ -109,15 +109,36 @@ h1::after {
 }
 
 .card {
+  position: relative; /* Adicionado para permitir que o ::before funcione corretamente */
   display: flex;
+  flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
   width: 300px;
+  height: 300px;
   font-family: Arial, sans-serif;
+  align-items: center;
+  background-image: url('/images/whey\ choco.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0; /* Garantir que o conteúdo da card fique acima do ::before */
 }
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+  z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
+}
+
 
 .card-img {
   width: 120px;
@@ -133,7 +154,8 @@ h1::after {
 .card-title {
   font-size: 24px;
   margin: 10px 0;
-  color: #c2bebe;
+  color: #ffffff;
+  
 }
 
 .card-description {
@@ -158,6 +180,8 @@ h1::after {
   font-weight: bold;
   color: #e60000;
   margin-top: 10px;
+  left: 90px;
+  position: relative;
 }
 
 .btn-buy {
@@ -180,7 +204,7 @@ h1::after {
 #botoes {
   display: flex;
   position: relative;
-  right: 120px;
+ top: 80px;
 
 }
 
