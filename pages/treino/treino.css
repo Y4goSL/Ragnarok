@@ -135,7 +135,7 @@
   }
   
   #card2 {
-    background-image: url("/images/pre\ treino.png");
+    background-image: url("/images/costas.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,6 +152,7 @@
   }
 
   #card5 {
+    background-image: url("/images/agachamento.png");
     position: relative;
     left: 600px;
   }
