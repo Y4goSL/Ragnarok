@@ -1,0 +1,292 @@
+@font-face {
+    font-family: "Pirou";
+    src: url("font/Pirou-Regular.woff") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  * {
+    font-family: "Pirou", sans-serif;
+    color: white;
+  }
+  
+  body {
+    background-image: url("images/fundo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #header {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 10px;
+  }
+  
+  #nomes {
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 40px;
+  }
+  
+  .halter {
+    position: relative;
+    height: 30px;
+  }
+  
+  #logo {
+    position: relative;
+    left: 60%;
+    margin-top: 10%;
+    bottom: 200px;
+  }
+  
+  #letramento {
+    position: relative;
+    left: 200px;
+    top: 200px;
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 80px;
+    color: red;
+    border-bottom: 8px solid #eb1c1c;
+    box-sizing: border-box;
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove o padding se houver */
+    line-height: 1.2;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px; /* Altura da borda */
+    background: linear-gradient(
+      to right,
+      #ffffff,
+      #ff0000
+    ); /* Gradiente da borda */
+  }
+  
+  .container {
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+  }
+  
+  .item:nth-child(1),
+  .item:nth-child(2),
+  .item:nth-child(3),
+  .item:nth-child(4),
+  .item:nth-child(5),
+  .item:nth-child(6),
+  .item:nth-child(7),
+  .item:nth-child(8),
+  .item:nth-child(9) {
+    width: 32%;
+    height: 32%;
+  }
+  
+  .card {
+    position: relative; /* Adicionado para permitir que o ::before funcione corretamente */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.5s ease;
+    margin: 20px;
+    width: 250px;
+    height: 300px;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    background-image: url("/images/thiago\ 2025.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; /* Garantir que o conteúdo da card fique acima do ::before */
+  }
+  
+  #card2 {
+    background-image: url("/images/pre\ treino.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; /* Garantir que o conteúdo da card fique acima do ::before */
+  }
+  
+  #card3 {
+    background-image: url("/images/thiago\ 2022.png");
+  }
+  
+  #card2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+    z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
+    align-items: center;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+    z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
+    align-items: center;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 0px 20px #ffffff;
+    cursor: pointer;
+  }
+  
+  .card-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-right: 2px solid #ddd;
+  }
+  
+  .card-content {
+    padding: 15px;
+    position: relative;
+    top: 220px;
+  }
+  
+  .card-title {
+    position: relative;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  .card-title-pre {
+    position: relative;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .card-benefits {
+    list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .card-benefits li {
+    margin-bottom: 5px;
+  }
+  
+  .card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    margin-top: 10px;
+    left: 90px;
+    position: relative;
+  }
+  
+  .btn-buy {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    margin-right: 4px;
+  }
+  
+  .btn-buy:hover {
+    background-color: #0056b3;
+  }
+  
+  #botoes {
+    display: flex;
+    position: relative;
+    top: 80px;
+    font-size: small;
+  }
+  
+  /* Estilo da barra de abas */
+  .tabs {
+    display: flex;
+    background: none;
+    justify-content: center;
+    position: relative;
+    margin-left: 70%;
+  }
+  
+  .tab {
+    padding: 1px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-left: 10px;
+  }
+  
+  .tab:hover {
+    background-color: #ddd;
+  }
+  
+  /* Marcação da aba ativa */
+  .tab.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 4px solid #eb1c1c;
+  }
+  
+  /* Conteúdo das abas */
+  .tab-content {
+    display: none;
+    padding: 20px;
+  
+    margin-top: 10px;
+  }
+  
+  /* Exibir o conteúdo da aba ativa */
+  .tab-content.active {
+    display: block;
+  }
+  
