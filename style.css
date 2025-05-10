@@ -11,7 +11,7 @@
 }
 
 body {
-  background-image: url("images/fundo.png");
+  background-image: url("/images/fundo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,6 +40,8 @@ body {
   align-items: center;
   margin-left: 10%;
   margin-top: 10px;
+  position: relative;
+  
 }
 
 #nomes {
@@ -122,6 +124,7 @@ h1::after {
   margin: 20px;
   width: 250px;
   height: 300px;
+  left: 200px;
   font-family: Arial, sans-serif;
   align-items: center;
   background-image: url("/images/thiago\ 2025.jpg");
@@ -142,6 +145,18 @@ h1::after {
 #card3 {
   background-image: url("/images/thiago\ 2022.png");
 }
+
+#card4 {
+  position: relative;
+  left: 600px;
+}
+
+#card5 {
+  position: relative;
+  left: 600px;
+}
+
+
 
 #card2::before {
   content: "";
@@ -264,6 +279,8 @@ h1::after {
   transition: background-color 0.3s;
   position: relative;
   margin-left: 10px;
+  left: 120px;
+  height: 30px;
 }
 
 .tab:hover {
@@ -281,6 +298,8 @@ h1::after {
 .tab-content {
   display: none;
   padding: 20px;
+  position: relative;
+  
 
   margin-top: 10px;
 }
@@ -289,3 +308,27 @@ h1::after {
 .tab-content.active {
   display: block;
 }
+
+.home {
+  padding: 1px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+  position: relative;
+  margin-left: 10px;
+  
+  left: 600px;
+  text-decoration: none;
+}
+
+.home:hover {
+  background-color: #ddd;
+
+}
+
+#casa {
+  width: 25px;
+  height: 25px;
+}
+
+

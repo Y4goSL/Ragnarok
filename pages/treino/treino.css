@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Pirou";
-    src: url("font/Pirou-Regular.woff") format("truetype");
+    src: url("/font/Pirou-Regular.woff") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -11,7 +11,7 @@
   }
   
   body {
-    background-image: url("images/fundo.png");
+    background-image: url("/images/fundo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -40,6 +40,8 @@
     align-items: center;
     margin-left: 10%;
     margin-top: 10px;
+    position: relative;
+    
   }
   
   #nomes {
@@ -122,9 +124,10 @@
     margin: 20px;
     width: 250px;
     height: 300px;
+    left: 200px;
     font-family: Arial, sans-serif;
     align-items: center;
-    background-image: url("/images/thiago\ 2025.jpg");
+    background-image: url("/images/peito.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -140,8 +143,20 @@
   }
   
   #card3 {
-    background-image: url("/images/thiago\ 2022.png");
+    background-image: url("/images/braço.png");
   }
+
+  #card4 {
+    position: relative;
+    left: 600px;
+  }
+
+  #card5 {
+    position: relative;
+    left: 600px;
+  }
+
+
   
   #card2::before {
     content: "";
@@ -264,6 +279,8 @@
     transition: background-color 0.3s;
     position: relative;
     margin-left: 10px;
+    left: 120px;
+    height: 30px;
   }
   
   .tab:hover {
@@ -281,6 +298,8 @@
   .tab-content {
     display: none;
     padding: 20px;
+    position: relative;
+    
   
     margin-top: 10px;
   }
@@ -290,3 +309,26 @@
     display: block;
   }
   
+  .home {
+    padding: 1px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-left: 10px;
+    
+    left: 600px;
+    text-decoration: none;
+  }
+
+  .home:hover {
+    background-color: #ddd;
+
+  }
+
+  #casa {
+    width: 25px;
+    height: 25px;
+  }
+
+ 
