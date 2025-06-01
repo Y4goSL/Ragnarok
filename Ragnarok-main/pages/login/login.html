@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ragnarok</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="item" name="cabeça" id="nomes">
+        <img src="/images/halter.png" alt="" class="halter" />
+        <h2>Ragnarok</h2>
+        <div class="tabs">
+          <div class="tab" id="tab1" onclick="openTab(1)">Registro</div>
+          <div class="tab" id="tab2" onclick="openTab(2)">Login</div>
+          <a href="/index.html" class="home"><div><img src="/images/casa.png" alt="" id="casa">Home</div></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div id="content1" class="tab-content" id="intro-container">
+        <div class="content-reg">
+        <h1>Registro</h1>
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <br>
+        <br>
+        <label for="senha">Crie uma senha:</label>
+        <input type="text" id="senha">
+        </div>
+        
+      </div>
+      
+
+      <div id="content2" class="tab-content" >
+        <div class="content-reg">
+            <h1>Login</h1>
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <br>
+        <br>
+        <label for="senha">Crie uma senha:</label>
+        <input type="text" id="senha">
+          
+        </div>
+      </div>
+      <div id="content3" class="tab-content">
+
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

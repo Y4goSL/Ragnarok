@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Pirou";
-  src: url("font/Pirou-Regular.woff") format("truetype");
+  src: url("font/Pirou-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -8,6 +8,7 @@
 * {
   font-family: "Pirou", sans-serif;
   color: white;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,6 +16,10 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body::before {
@@ -26,14 +31,15 @@ body::before {
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   z-index: -1;
+
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html, body {
+  height: auto;
+  min-height: 100vh; /* garante que o fundo cubra a tela */
+  overflow-x: hidden;
 }
+
 
 #header {
   display: flex;
@@ -41,7 +47,6 @@ body {
   margin-left: 10%;
   margin-top: 10px;
   position: relative;
-  
 }
 
 #nomes {
@@ -56,28 +61,41 @@ body {
   height: 30px;
 }
 
-#logo {
-  position: relative;
-  left: 60%;
-  margin-top: 10%;
-  bottom: 200px;
+#intro-container, #content1.active {
+  display: flex;
+  justify-content: center; /* centraliza tudo */
+  align-items: center;      /* alinha verticalmente */
+  flex-wrap: wrap;          /* para não estourar em telas pequenas */
+  gap: 40px;                /* espaço entre texto e logo */
+  margin-top: 100px;
 }
 
 #letramento {
-  position: relative;
-  left: 200px;
-  top: 200px;
   max-width: 600px;
+  text-align: left;
+  position: static; /* remove posicionamento antigo */
+
+  
 }
+
+#logo {
+  height: 300px;
+  margin: 0;
+  position: static; /* remove left, bottom, etc */
+  
+}
+
+
+
 
 h1 {
   font-size: 80px;
   color: red;
   border-bottom: 8px solid #eb1c1c;
-  box-sizing: border-box;
-  margin: 0; /* Remove margens extras */
-  padding: 0; /* Remove o padding se houver */
+  margin: 0;
+  padding: 0;
   line-height: 1.2;
+  position: relative;
 }
 
 h1::after {
@@ -86,78 +104,58 @@ h1::after {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px; /* Altura da borda */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #ff0000
-  ); /* Gradiente da borda */
+  height: 8px;
+  background: linear-gradient(to right, #ffffff, #ff0000);
 }
 
 .container {
   display: flex;
-  gap: 2%;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.item:nth-child(1),
-.item:nth-child(2),
-.item:nth-child(3),
-.item:nth-child(4),
-.item:nth-child(5),
-.item:nth-child(6),
-.item:nth-child(7),
-.item:nth-child(8),
-.item:nth-child(9) {
-  width: 32%;
-  height: 32%;
+.item {
+  flex: 1 1 300px;
+  max-width: 300px;
 }
 
 .card {
-  position: relative; /* Adicionado para permitir que o ::before funcione corretamente */
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.5s ease;
-  margin: 20px;
-  width: 250px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 300px;
   height: 300px;
-  left: 200px;
   font-family: Arial, sans-serif;
   align-items: center;
-  background-image: url("/images/thiago\ 2025.jpg");
+  background-image: url("/images/thiago 2025.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0; /* Garantir que o conteúdo da card fique acima do ::before */
+  z-index: 0;
 }
 
 #card2 {
-  background-image: url("/images/pre\ treino.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0; /* Garantir que o conteúdo da card fique acima do ::before */
+  background-image: url("/images/pre treino.png");
 }
 
 #card3 {
-  background-image: url("/images/thiago\ 2022.png");
+  background-image: url("/images/thiago 2022.png");
 }
 
-#card4 {
-  position: relative;
-  left: 600px;
-}
-
+#card4,
 #card5 {
+  left: 0;
   position: relative;
-  left: 600px;
 }
 
-
-
+.card::before,
 #card2::before {
   content: "";
   position: absolute;
@@ -165,21 +163,8 @@ h1::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
-  z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
-  align-items: center;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
-  z-index: -1; /* Coloca a camada de sobreposição atrás do conteúdo */
-  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .card:hover {
@@ -198,16 +183,11 @@ h1::after {
   padding: 15px;
   position: relative;
   top: 220px;
+  text-align: center;
 }
 
-.card-title {
-  position: relative;
-  font-size: 24px;
-  margin: 10px 0;
-  color: #ffffff;
-}
+.card-title,
 .card-title-pre {
-  position: relative;
   font-size: 24px;
   margin: 10px 0;
   color: #ffffff;
@@ -235,7 +215,7 @@ h1::after {
   font-weight: bold;
   color: #ff0000;
   margin-top: 10px;
-  left: 90px;
+  left: 0;
   position: relative;
 }
 
@@ -248,8 +228,8 @@ h1::after {
   border-radius: 5px;
   font-weight: bold;
   margin-top: 15px;
-  transition: background-color 0.3s;
   margin-right: 4px;
+  transition: background-color 0.3s;
 }
 
 .btn-buy:hover {
@@ -258,72 +238,76 @@ h1::after {
 
 #botoes {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   position: relative;
   top: 80px;
   font-size: small;
+  gap: 10px;
 }
 
-/* Estilo da barra de abas */
 .tabs {
   display: flex;
-  background: none;
+  flex-direction: row;
   justify-content: center;
   position: relative;
-  margin-left: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: nowrap;
+  gap: 10px;
+  left: 60%;
 }
 
 .tab {
-  padding: 1px 20px;
+  padding: 5px 20px;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s;
   position: relative;
-  margin-left: 10px;
-  left: 120px;
-  height: 30px;
+  height: auto;
 }
 
 .tab:hover {
   background-color: #ddd;
 }
 
-/* Marcação da aba ativa */
 .tab.active {
   color: white;
   font-weight: bold;
   border-bottom: 4px solid #eb1c1c;
 }
 
-/* Conteúdo das abas */
+
+
+
+
 .tab-content {
   display: none;
   padding: 20px;
-  position: relative;
+  width: 100%;
+  margin-top: 10px; /* valor padrão ou ajustável conforme layout */
+  position: static; /* ou simplesmente remova essa linha */
   
-
-  margin-top: 10px;
 }
 
-/* Exibir o conteúdo da aba ativa */
+
+
 .tab-content.active {
   display: block;
+  
 }
 
 .home {
-  padding: 1px 20px;
+  padding: 5px 20px;
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s;
   position: relative;
-  margin-left: 10px;
-  
-  left: 600px;
   text-decoration: none;
 }
 
 .home:hover {
   background-color: #ddd;
-
 }
 
 #casa {
@@ -332,3 +316,60 @@ h1::after {
 }
 
 
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  #header,
+  #nomes {
+    flex-direction: column;
+    margin-left: 5%;
+    align-items: flex-start;
+  }
+
+  #logo,
+  #letramento {
+    position: static;
+    margin: 20px auto;
+    left: 0;
+    top: 0;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    left: 0;
+    margin: 10px auto;
+  }
+
+  .tabs {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .tab {
+    left: 0;
+    margin: 5px 0;
+  }
+
+  .home {
+    left: 0;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .card-content {
+    top: 150px;
+    padding: 10px;
+  }
+
+}

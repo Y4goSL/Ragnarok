@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Pirou";
-    src: url("/font/Pirou-Regular.woff") format("truetype");
+    src: url("font/Pirou-Regular.woff") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -127,7 +127,7 @@
     left: 200px;
     font-family: Arial, sans-serif;
     align-items: center;
-    background-image: url("/images/peito.png");
+    background-image: url("/images/thiago\ 2025.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@
   }
   
   #card2 {
-    background-image: url("/images/costas.png");
+    background-image: url("/images/pre\ treino.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,21 +143,20 @@
   }
   
   #card3 {
-    background-image: url("/images/braço.png");
+    background-image: url("/images/thiago\ 2022.png");
   }
-
+  
   #card4 {
     position: relative;
     left: 600px;
   }
-
+  
   #card5 {
-    background-image: url("/images/agachamento.png");
     position: relative;
     left: 600px;
   }
-
-
+  
+  
   
   #card2::before {
     content: "";
@@ -321,15 +320,16 @@
     left: 600px;
     text-decoration: none;
   }
-
+  
   .home:hover {
     background-color: #ddd;
-
+  
   }
-
+  
   #casa {
     width: 25px;
     height: 25px;
   }
-
- 
+  
+  
+  
